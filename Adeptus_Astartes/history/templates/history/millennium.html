@@ -1,0 +1,38 @@
+{% extends 'Space_Marines/base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>История Империума</h1>
+
+<div class="img">
+    <img class="img3" src="{% static 'Space_Marines/aquila_801.png' %}" alt="">
+</div>
+
+<h2>Хронология событий</h2>
+
+<div class="container">
+    <div class="wrap recs">
+        <h2>Всего записей: {{ events.count }}</h2>
+
+        <form action="{% url 'detail' 0 %}" method="get" onsubmit="this.action='{% url 'detail' 0 %}'.replace('0', this.search_query.value);">
+            <input class="search" type="number" name="search_query" placeholder="Поиск миллениума" value="{{ search_query }}">
+        </form>
+
+        {% if request.user.is_authenticated %}
+        <a class="sign" href="{% url 'create-record' %}">Добавить новую запись</a>
+        {% endif %}
+    </div>
+</div>
+
+{% for event in events %}
+<div class="container hover">
+    <a href="{% url 'detail' event.millennium %}">
+        <div class="text">
+            <h2>M{{ event.millennium }}</h2>
+            <p>{{ event.description|truncatechars:700|safe }}</p>
+        </div>
+    </a>
+</div>
+{% endfor %}
+
+{% endblock %}

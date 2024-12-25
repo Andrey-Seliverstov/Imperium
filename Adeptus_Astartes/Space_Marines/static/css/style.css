@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    background-image: url("../Space_Marines/aquila.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+}
+
+.wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.element {
+    flex-basis: 360px;
+    max-width: 360px;
+}
+
+.element, .container {
+    background: lightgray;
+    border: 6px solid black;
+    margin: 20px 0;
+    position: relative;
+}
+
+.text {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.block img {
+    width: 360px;
+}
+
+.content h1 {
+    text-align: center;
+    margin: 20px 0 40px;
+    font-size: 100px;
+    color: black;
+    -webkit-text-stroke: 4px white;
+    text-stroke: 4px white;
+}
+
+.img + h2, .text h2 {
+    text-align: center;
+    margin-bottom: 20px 0;
+    font-size: 45px;
+}
+
+.img + h2 {
+    color: black;
+    -webkit-text-stroke: 1px white;
+    text-stroke: 1px white;
+}
+
+.img {
+    text-align: center;
+}
+
+.frame {
+    background: white;
+    display: table-cell;
+    height: 300px;
+    text-align: center;
+    width: 300px;
+    vertical-align: middle;
+}
+
+.symbol{
+    box-sizing: border-box;
+    max-height: 250px;
+}
+
+.img2 {
+    height: 200px;
+    max-width: 320px;
+}
+
+.img3 {
+    height: 550px;
+    margin: -120px 0 -60px;
+}
+
+.hover:hover {
+    background: grey;
+}
+
+.hover:hover img {
+    opacity: 0.5;
+}
+
+.hover:hover h2 {
+    opacity: 0.5;
+}
+
+.hover:hover .text {
+    color: black;
+}
+
+.big-font {
+    font-size: 24px;
+}
+
+.logo img {
+    width: 200px;
+}
+
+.wrapped {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.menu a {
+    font-weight: bold;
+    font-size: 28px;
+    text-decoration: none;
+    color: black;
+    -webkit-text-stroke: 0.5px white;
+    text-stroke: 0.5px white;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    text-align: center;
+}
+
+.menu li {
+    margin-right: 50px;
+}
+
+.menu li a:hover {
+    color: grey;
+}
+
+.logo a img:hover {
+    opacity: 0.8;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.form {
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
+}
+
+.field {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+    overflow: auto;
+    resize: vertical;
+}
+
+label {
+    font-size: 30px;
+}
+
+input, textarea {
+    margin: 20px 0;
+}
+
+.submit {
+    padding: 20px;
+    font-size: 25px;
+    background: black;
+    color: white;
+    width: 230px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.submit:hover {
+    background: grey;
+}
+
+.account {
+    display: flex;
+    font-size: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 200px;
+    border: 2px solid black;
+    padding: 0 30px;
+}
+
+.sign {
+    background: grey;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.sign:hover {
+    opacity: 0.7;
+}
+
+.recs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    padding: 0 40px;
+}
+
+.alert {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    color:red;
+    -webkit-text-stroke: 1px black;
+    text-stroke: 1px black;
+}
+
+.edit {
+    margin: 70px 50px 30px;
+    width: 350px;
+    text-align: center;
+    font-size: 40px;
+}
+
+textarea {
+    height: 220px;
+}
+
+.del {
+    font-size: 40px;
+    text-align: center;
+}
+
+.search {
+    width: 270px;
+    height: 52px;
+    margin: 0;
+    font-size: 25px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+ul {
+    padding-inline-start: 0;
+        margin-block-start: 1em;
+        margin-block-end: 2em;
+}
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    font-size: 25px
+}
+
+.button {
+    padding: 10px 20px;
+    background: lightgrey;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.button:hover, .act {
+    background: grey;
+}
+
+.contain-pag {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background: lightgray;
+    border: 2px solid black;
+}
+
+.right {
+    margin-left: 20px;
+}
+
+.header {
+    height: 170px;
+}
+
+.comment__details {
+    border: 2px solid black;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.comment__author {
+    font-size: 30px;
+    margin: 0;
+}
+
+.comment__info {
+    margin-left: 50px;
+}

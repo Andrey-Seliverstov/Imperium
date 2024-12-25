@@ -1,0 +1,59 @@
+{% extends 'Space_Marines/base.html' %}
+
+{% block content %}
+
+<h1>{{ order.title }}</h1>
+
+<div class="container">
+
+        {% if request.user.is_authenticated %}
+    <div class="wrap recs">
+            <a class="sign edit" href="{% url 'update-order' order.id %}">Редактировать</a>
+            <a class="sign edit" href="{% url 'delete-order' order.id %}">Удалить</a>
+    </div>
+    {% endif %}
+
+    <div class="content flex-container">
+        <div class="text big-font">
+            {{ order.description|linebreaks }}
+        </div>
+    </div>
+
+</div>
+
+<div class="container">
+
+    {% if request.user.is_authenticated %}
+    <div class="wrap recs">
+        <form class="form" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form__field">
+                <label for="formInput#text">{{ field.label }}: </label>
+                {{ field }}
+            </div>
+            {% endfor %}
+            <input class="submit" type="submit" value="Подтвердить" />
+        </form>
+    </div>
+    {% endif %}
+
+    <div class="wrap">
+      {% for review in order.review_set.all %}
+      {% if review.body %}
+          <div class="comment">
+            <div class="comment__details">
+              <p class="comment__author">{{ review.owner.username }}</p>
+              <p class="comment__info">
+                {{ review.body|linebreaksbr }}
+              </p>
+            </div>
+          </div>
+
+
+      {% endif %}
+      {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

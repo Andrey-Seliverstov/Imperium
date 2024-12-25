@@ -1,0 +1,20 @@
+{% extends 'Space_Marines/base.html' %}
+
+{% block content %}
+
+<h1>M{{ num.millennium }}</h1>
+
+<div class="container">
+    {% if request.user.is_authenticated %}
+    <div class="wrap recs">
+            <a class="sign edit" href="{% url 'update-record' num.millennium %}">Редактировать</a>
+            <a class="sign edit" href="{% url 'delete-record' num.millennium %}">Удалить</a>
+    </div>
+    {% endif %}
+
+    <div class="text">
+        <p class="big-font">{{ num.description|linebreaks }}</p>
+    </div>
+</div>
+
+{% endblock %}

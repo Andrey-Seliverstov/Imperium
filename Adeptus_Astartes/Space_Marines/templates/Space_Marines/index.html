@@ -1,0 +1,58 @@
+{% extends 'Space_Marines/base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>Adeptus Astartes</h1>
+
+<div class="img">
+    <img src="{% static 'Space_Marines/Adept.png' %}" alt="">
+</div>
+
+<h2>Легионы Космодесанта</h2>
+
+<div class="block">
+    {% for order in orders %}
+    <div class="element hover">
+
+        <a href="{% url 'order' order.id %}">
+            <div class="frame">
+                <img class="symbol" src="{{ order.symbol.url }}" alt="">
+            </div>
+            <div class="text">
+                <div class="header">
+                    <h2>{{ order.title }}</h2>
+                </div>
+                <img class="img2" src="{{ order.image.url }}" alt="">
+                <p>{{ order.description|linebreaks|truncatechars:1000 }}</p>
+            </div>
+        </a>
+
+    </div>
+    {% endfor %}
+</div>
+
+<div class="contain-pag">
+
+    {% include 'Space_Marines/pagination.html' with queryset=orders %}
+
+    <div class="pagination">
+        <form id="search" action="{% url 'index' %}" method="get">
+            <input class="search" type="text" name="search_query" placeholder="Поиск по легионам" value="{{ search_query }}">
+        </form>
+
+        {% if request.user.is_authenticated %}
+        <a class="sign right" href="{% url 'create-order' %}">Добавить легион</a>
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+

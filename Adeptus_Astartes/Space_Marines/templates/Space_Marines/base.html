@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'Space_Marines/favicon-32x32.png' %}">
+</head>
+<body>
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert">
+  <div class="alert--{{ message.tags }}">
+    <p class="alert__message">{{ message }}</p>
+    <button class="alert__close">⨯</button>
+  </div>
+</div>
+{% endfor %}
+{% endif %}
+
+<div class="menu">
+    <div class="wrap">
+        <div class="wrapped">
+            <div class="logo">
+                <a href="{% url 'index' %}"><img src="{% static 'Space_Marines/unnamed.png' %}" alt=""></a>
+            </div>
+            <ul>
+                <li><a href="{% url 'index' %}">Легионы</a></li>
+                <li><a href="{% url 'history' %}">История</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'personal-account' %}">Личный кабинет</a></li>
+                <li><a href="{% url 'logout' %}" class="btn btn--sub">Выйти</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}" class="btn btn--sub">Вход/Регистрация</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<div class="content">
+    <div class="wrap">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+
+<script src="{% static 'uikit/app.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

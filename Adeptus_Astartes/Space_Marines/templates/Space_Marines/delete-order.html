@@ -1,0 +1,19 @@
+{% extends 'Space_Marines/base.html' %}
+
+{% block content %}
+
+    <!-- Main Section -->
+    <main class="container">
+        <div class="wrap">
+            <form method="POST">
+                {% csrf_token %}
+                <p class="del">Are your sure you want to delete order <b>"{{ object }}"</b>?</p>
+                <div class="wrap recs">
+                    <a  class="sign edit" href="{% url 'history' %}">&#x2190 Go Back</a>
+                    <input class="sign edit" type="submit" value="Delete" />
+                </div>
+            </form>
+        </div>
+    </main>
+
+{% endblock %}

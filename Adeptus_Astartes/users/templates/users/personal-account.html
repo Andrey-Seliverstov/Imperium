@@ -1,0 +1,16 @@
+{% extends 'Space_Marines/base.html' %}
+
+{% block content %}
+
+  <!-- Main Section -->
+  <main class="container">
+    <div class="wrap">
+      <h2 class="dev__name">Name: {{ pers.username }}</h2>
+      {% if pers.email %}
+      <p>Email: {{ pers.email }}</p>
+      {% endif %}
+      <p>Date of registration: {{ pers.created }}</p>
+    </div>
+  </main>
+
+{% endblock %}
